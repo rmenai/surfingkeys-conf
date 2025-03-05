@@ -982,6 +982,13 @@ completions.no = googleCustomSearch({
   domain: "nodejs.org",
 })
 
+// NixOs standard library documentation
+completions.nx = googleCustomSearch({
+  alias: "nx",
+  name: "nix",
+  domain: "nixos.org",
+})
+
 // Mozilla Developer Network (MDN)
 completions.md = {
   alias: "md",

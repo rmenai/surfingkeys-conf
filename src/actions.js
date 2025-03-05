@@ -167,19 +167,6 @@ actions.openLink = (url, { newTab = false, active = true } = {}) => {
 actions.editSettings = () =>
   tabOpenLink(chrome.extension.getURL("/pages/options.html"))
 
-actions.togglePdfViewer = () =>
-  chrome.storage.local.get("noPdfViewer", (resp) => {
-    if (!resp.noPdfViewer) {
-      chrome.storage.local.set({ noPdfViewer: 1 }, () => {
-        Front.showBanner("PDF viewer disabled.")
-      })
-    } else {
-      chrome.storage.local.remove("noPdfViewer", () => {
-        Front.showBanner("PDF viewer enabled.")
-      })
-    }
-  })
-
 actions.previewLink = () =>
   util.createHints("a[href]", (a) =>
     Front.showEditor(a.href, (url) => actions.openLink(url), "url")

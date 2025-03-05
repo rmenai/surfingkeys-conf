@@ -101,12 +101,6 @@ const main = async () => {
     )
   }
 
-  if (conf.logLevels) {
-    await chrome.storage.local.set({
-      logLevels: conf.logLevels,
-    })
-  }
-
   if (conf.keys && conf.keys.unmaps) {
     const { unmaps } = conf.keys
     if (unmaps.mappings) {
